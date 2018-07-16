@@ -7,17 +7,17 @@
 ## Contains 4 functions get, set, setInverse and getInverse.
 
 makeCacheMatrix <- function(x = matrix()) {
-      i <- NULL
+      inv <- NULL
       set <- function(p) {
             x <<- p
-            i <<- NULL
+            inv <<- NULL
       }
       get <- function()
             x
       setInverse <- function(inverse)
-            i <<- inverse
+            inv <<- inverse
       getInverse <- function()
-            i
+            inv
       list(
             set = set,
             get = get,
