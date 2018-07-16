@@ -34,10 +34,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
       ## Return a matrix that is the inverse of 'x'
-      p <- x$get()
+      matrix <- x$get()
       
-      if(NROW(p) != NCOL(p)){
-            print("Matrix is not square")
+      if(NROW(matrix) != NCOL(matrix)){         ##Checks if matrix is square
+            print("Matrix is not square")       ## and sets inverse to NULL if not
             x$setInverse(NULL)
       }
       else{
@@ -45,8 +45,8 @@ cacheSolve <- function(x, ...) {
                   print("Getting cached inverse")
                   return(x$getInverse())
             }
-            i <- solve(p)
-            x$setInverse(i)
-            i
+            inverse <- solve(matrix)
+            x$setInverse(inverse)
+            inverse
       }
 }
